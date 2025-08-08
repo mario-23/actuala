@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ñam Ñam Factory - Panadería Artesanal Premium</title>
+    <meta name="description" content="Panadería artesanal de lujo en Guatemala. Pan de masa madre elaborado con técnicas tradicionales y ingredientes premium.">
+    
+    <link rel="icon" href="logo23.ico" type="logo23.ico">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lato:wght@300;400;500;700&family=Fredoka+One&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Nueva paleta inspirada en el logo - tonos pastel elegantes */
+            --rosa-pastel: #F7CFFA;      /* Rosa pastel del cupcake */
+            --lila-suave: #E8D5FF;       /* Lila suave del cupcake */
+            --verde-menta: #BCE2CD;      /* Verde menta */
+            --amarillo-vainilla: #FDF2B8; /* Amarillo vainilla */
+            --amarillo-fuerte: #F6D55C;  /* Amarillo más fuerte del "Factory" */
+            
+            /* Versiones más saturadas para acentos */
+            --rosa-medio: #F3A5F7;
+            --lila-medio: #D1B3FF;
+            --verde-medio: #A8D5BA;
+            --amarillo-medio: #F4D03F;
+            
+            /* Versiones oscuras para contraste y hover */
+            --rosa-oscuro: #E888EB;
+            --lila-oscuro: #C490FF;
+            --verde-oscuro: #82C09A;
+            --amarillo-oscuro: #F1C40F;
+            
+            /* Neutros sofisticados */
+            --primary-dark: #2C1810;
+            --primary-brown: #6B4423;
+            --neutral-white: #FFFFFF;
+            --neutral-cream: #FEFCF9;
+            --neutral-light: #F9F7F4;
+            --neutral-medium: #888888;
+            --neutral-dark: #333333;
+            
+            /* Textos */
+            --text-primary: #2C1810;
+            --text-secondary: #6B4423;
+            --text-light: rgba(255, 255, 255, 0.9);
+            
+            /* Sombras y efectos actualizados */
+            --shadow-subtle: 0 2px 8px rgba(44, 24, 16, 0.08);
+            --shadow-medium: 0 4px 20px rgba(44, 24, 16, 0.12);
+            --shadow-strong: 0 8px 32px rgba(44, 24, 16, 0.16);
+            --shadow-colorful: 0 4px 20px rgba(247, 207, 250, 0.25);
+            --shadow-mint: 0 4px 20px rgba(188, 226, 205, 0.25);
+            --shadow-vanilla: 0 4px 20px rgba(253, 242, 184, 0.25);
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--neutral-cream);
+            font-weight: 400;
+        }
+
+        /* Typography */
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .fredoka {
+            font-family: 'Fredoka One', cursive;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: var(--transition);
+            border-bottom: 1px solid var(--rosa-pastel);
+        }
+
+        .header.scrolled {
+            padding: 0.75rem 0;
+            box-shadow: var(--shadow-colorful);
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+        }
+
+        .logo {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.75rem;
+            color: var(--primary-dark);
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            background: linear-gradient(45deg, var(--rosa-medio), var(--amarillo-fuerte));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--rosa-medio), var(--amarillo-fuerte));
+            transition: var(--transition);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover {
+            color: var(--rosa-oscuro);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cart-btn {
+            background: linear-gradient(135deg, var(--lila-medio), var(--lila-oscuro));
+            color: var(--neutral-white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            position: relative;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .cart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(209, 179, 255, 0.4);
+            background: linear-gradient(135deg, var(--lila-oscuro), var(--lila-medio));
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--rosa-medio);
+            color: var(--neutral-white);
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            font-size: 0.75rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(243, 165, 247, 0.4);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-toggle span {
+            width: 24px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--rosa-medio), var(--amarillo-fuerte));
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            padding: 6rem 2rem 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            text-align: center;
+        }
+
+        .mobile-nav-links li {
+            margin-bottom: 2rem;
+        }
+
+        .mobile-nav-links a {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .mobile-nav-links a:hover {
+            color: var(--rosa-oscuro);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(
+                135deg,
+                rgba(247, 207, 250, 0.15) 0%,
+                rgba(232, 213, 255, 0.15) 25%,
+                rgba(188, 226, 205, 0.15) 50%,
+                rgba(253, 242, 184, 0.15) 75%,
+                rgba(246, 213, 92, 0.15) 100%
+            ),
+            var(--neutral-cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--primary-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.3" fill="%23F7CFFA" opacity="0.1"/><circle cx="75" cy="75" r="0.3" fill="%23E8D5FF" opacity="0.1"/><circle cx="25" cy="75" r="0.3" fill="%23BCE2CD" opacity="0.1"/><circle cx="75" cy="25" r="0.3" fill="%23FDF2B8" opacity="0.1"/><circle cx="50" cy="50" r="0.3" fill="%23F6D55C" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            padding: 0 2rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.8rem, 5vw, 4.8rem);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--primary-dark);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--rosa-oscuro) 50%, var(--amarillo-oscuro) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content .subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--amarillo-fuerte), var(--rosa-medio));
+            color: var(--neutral-white);
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.5px;
+            box-shadow: var(--shadow-colorful);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(247, 207, 250, 0.4);
+            background: linear-gradient(135deg, var(--rosa-medio), var(--amarillo-fuerte));
+        }
+
+        .cta-btn.secondary {
+            background: transparent;
+            border: 2px solid var(--verde-medio);
+            color: var(--verde-oscuro);
+            box-shadow: none;
+        }
+
+        .cta-btn.secondary:hover {
+            background: var(--verde-medio);
+            color: var(--neutral-white);
+            box-shadow: 0 8px 25px rgba(168, 213, 186, 0.3);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--neutral-white);
+            padding: 5rem 2rem;
+            border-bottom: 1px solid var(--rosa-pastel);
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 4rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .stat-item:nth-child(1) {
+            background: var(--rosa-pastel);
+        }
+
+        .stat-item:nth-child(2) {
+            background: var(--lila-suave);
+        }
+
+        .stat-item:nth-child(3) {
+            background: var(--verde-menta);
+        }
+
+        .stat-item:nth-child(4) {
+            background: var(--amarillo-vainilla);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-number {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item:nth-child(1) .stat-number {
+            color: var(--rosa-oscuro);
+        }
+
+        .stat-item:nth-child(2) .stat-number {
+            color: var(--lila-oscuro);
+        }
+
+        .stat-item:nth-child(3) .stat-number {
+            color: var(--verde-oscuro);
+        }
+
+        .stat-item:nth-child(4) .stat-number {
+            color: var(--amarillo-oscuro);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 8rem 2rem;
+            background: linear-gradient(
+                135deg,
+                var(--rosa-pastel) 0%,
+                var(--lila-suave) 25%,
+                var(--neutral-light) 50%,
+                var(--verde-menta) 75%,
+                var(--amarillo-vainilla) 100%
+            );
+        }
+
+        .products-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 4rem;
+            justify-items: center;
+        }
+
+        .product-card {
+            background: var(--neutral-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition);
+            border: 1px solid rgba(247, 207, 250, 0.3);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-colorful);
+        }
+
+        .product-card:nth-child(1) {
+            border-color: rgba(247, 207, 250, 0.4);
+        }
+
+        .product-card:nth-child(2) {
+            border-color: rgba(188, 226, 205, 0.4);
+        }
+
+        .product-image {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+        }
+
+        .product-card:nth-child(1) .product-image {
+            background: linear-gradient(135deg, var(--rosa-pastel), var(--lila-suave));
+            color: var(--rosa-oscuro);
+        }
+
+        .product-card:nth-child(2) .product-image {
+            background: linear-gradient(135deg, var(--verde-menta), var(--amarillo-vainilla));
+            color: var(--verde-oscuro);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--neutral-white);
+        }
+
+        .product-card:nth-child(1) .product-badge {
+            background: linear-gradient(135deg, var(--rosa-medio), var(--rosa-oscuro));
+        }
+
+        .product-card:nth-child(2) .product-badge {
+            background: linear-gradient(135deg, var(--verde-medio), var(--verde-oscuro));
+        }
+
+        .product-info {
+            padding: 3rem;
+        }
+
+        .product-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 1.2rem;
+        }
+
+        .product-description {
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 3rem;
+        }
+
+        .product-features li {
+            padding: 0.7rem 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(247, 207, 250, 0.15);
+        }
+
+        .product-features li:last-child {
+            border-bottom: none;
+        }
+
+        .product-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .product-card:nth-child(1) .product-features li::before {
+            color: var(--rosa-medio);
+        }
+
+        .product-card:nth-child(2) .product-features li::before {
+            color: var(--verde-medio);
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .product-price {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+        }
+
+        .add-to-cart {
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+            color: var(--neutral-white);
+        }
+
+        .product-card:nth-child(1) .add-to-cart {
+            background: linear-gradient(135deg, var(--rosa-medio), var(--rosa-oscuro));
+        }
+
+        .product-card:nth-child(2) .add-to-cart {
+            background: linear-gradient(135deg, var(--verde-medio), var(--verde-oscuro));
+        }
+
+        .add-to-cart:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .product-card:nth-child(1) .add-to-cart:hover {
+            box-shadow: 0 6px 20px rgba(243, 165, 247, 0.4);
+        }
+
+        .product-card:nth-child(2) .add-to-cart:hover {
+            box-shadow: 0 6px 20px rgba(168, 213, 186, 0.4);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--neutral-white);
+            padding: 8rem 2rem;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.8rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .about-feature {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .about-feature:nth-child(1) {
+            background: var(--rosa-pastel);
+        }
+
+        .about-feature:nth-child(2) {
+            background: var(--lila-suave);
+        }
+
+        .about-feature:nth-child(3) {
+            background: var(--verde-menta);
+        }
+
+        .about-feature:nth-child(4) {
+            background: var(--amarillo-vainilla);
+        }
+
+        .about-feature:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .about-feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .about-feature h3 {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .about-feature p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, var(--rosa-medio), var(--lila-medio), var(--verde-medio), var(--amarillo-fuerte));
+            border-radius: var(--border-radius);
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: var(--neutral-white);
+            box-shadow: var(--shadow-colorful);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-brown));
+            padding: 6rem 2rem;
+            color: var(--text-light);
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+            font-weight: 600;
+            color: var(--neutral-white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem 2rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: var(--border-radius);
+            padding: 2px;
+            background: linear-gradient(135deg, var(--rosa-medio), var(--lila-medio), var(--verde-medio));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+        }
+
+        .testimonial:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-5px);
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 0.95rem;
+            background: linear-gradient(90deg, var(--rosa-medio), var(--amarillo-fuerte));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Cart Modal Mejorado */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 24, 16, 0.8);
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+        }
+
+        .cart-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-content {
+            background: var(--neutral-white);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            max-width: 650px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-colorful);
+            border: 2px solid var(--rosa-pastel);
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--rosa-pastel);
+        }
+
+        .cart-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            background: linear-gradient(90deg, var(--rosa-oscuro), var(--amarillo-oscuro));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--neutral-medium);
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .close-cart:hover {
+            background: var(--rosa-pastel);
+            color: var(--rosa-oscuro);
+        }
+
+        .cart-items {
+            margin-bottom: 2rem;
+            min-height: 100px;
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--neutral-medium);
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, var(--rosa-pastel), var(--lila-suave));
+            border-radius: var(--border-radius);
+            border: 2px dashed var(--rosa-medio);
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--rosa-pastel);
+            gap: 1rem;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .cart-item-details {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: var(--lila-suave);
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+            width: fit-content;
+        }
+
+        .quantity-btn {
+            background: linear-gradient(135deg, var(--rosa-medio), var(--rosa-oscuro));
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--neutral-white);
+            transition: var(--transition);
+            box-shadow: 0 2px 6px rgba(243, 165, 247, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(243, 165, 247, 0.4);
+        }
+
+        .quantity-display {
+            font-weight: 700;
+            color: var(--primary-dark);
+            min-width: 30px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .cart-item-price {
+            font-weight: 700;
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            text-align: right;
+        }
+
+        .remove-item {
+            background: linear-gradient(135deg, var(--rosa-medio), var(--rosa-oscuro));
+            color: var(--neutral-white);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.8rem;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+            margin-top: 0.5rem;
+            box-shadow: 0 2px 6px rgba(243, 165, 247, 0.3);
+        }
+
+        .remove-item:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(243, 165, 247, 0.4);
+        }
+
+        .cart-total {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2rem;
+            text-align: center;
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--amarillo-vainilla), var(--rosa-pastel));
+            border-radius: var(--border-radius);
+            border: 2px solid var(--amarillo-fuerte);
+            box-shadow: var(--shadow-vanilla);
+        }
+
+        .payment-methods {
+            margin-bottom: 2rem;
+        }
+
+        .payment-methods h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+            text-align: center;
+        }
+
+        .payment-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .payment-option {
+            padding: 1rem;
+            border: 2px solid var(--lila-suave);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            background: var(--neutral-white);
+        }
+
+        .payment-option:hover {
+            border-color: var(--lila-medio);
+            background: var(--lila-suave);
+        }
+
+        .payment-option.selected {
+            border-color: var(--rosa-medio);
+            background: var(--rosa-pastel);
+            box-shadow: 0 4px 15px rgba(243, 165, 247, 0.3);
+        }
+
+        .payment-option-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .payment-option-text {
+            font-weight: 600;
+            color: var(--primary-dark);
+            font-size: 0.9rem;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--verde-medio), var(--verde-oscuro));
+            color: var(--neutral-white);
+            border: none;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(168, 213, 186, 0.3);
+            font-family: 'Fredoka One', cursive;
+        }
+
+        .checkout-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(168, 213, 186, 0.4);
+        }
+
+        .checkout-btn:disabled {
+            background: var(--neutral-medium);
+            cursor: not-allowed;
+            color: var(--neutral-white);
+            box-shadow: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-brown));
+            color: var(--text-light);
+            padding: 6rem 2rem 3rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, var(--rosa-medio), var(--amarillo-fuerte));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--amarillo-fuerte);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Toast Notifications Mejoradas */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, var(--verde-medio), var(--verde-oscuro));
+            color: var(--neutral-white);
+            padding: 1.2rem 1.8rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-mint);
+            z-index: 3000;
+            transform: translateX(400px);
+            transition: var(--transition);
+            font-weight: 500;
+            border-left: 4px solid var(--amarillo-fuerte);
+            min-width: 300px;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast.error {
+            border-left-color: var(--rosa-medio);
+            background: linear-gradient(135deg, var(--rosa-medio), var(--rosa-oscuro));
+        }
+
+        .toast-icon {
+            display: inline-block;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+                text-align: center;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .payment-options {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                padding: 0 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-btn {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .product-footer {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+
+            .add-to-cart {
+                width: 100%;
+            }
+
+            .cart-content {
+                padding: 2rem;
+                margin: 1rem;
+            }
+
+            .quantity-controls {
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav {
+                padding: 0 1rem;
+            }
+
+            .products,
+            .about,
+            .stats {
+                padding: 4rem 1rem;
+            }
+
+            .cart-content {
+                padding: 1.5rem;
+                margin: 0.5rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card {
+                min-width: auto;
+            }
+
+            .toast {
+                right: 1rem;
+                left: 1rem;
+                min-width: auto;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--rosa-pastel);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--rosa-medio), var(--lila-medio));
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--rosa-oscuro), var(--lila-oscuro));
+        }
+
+        /* Focus states */
+        button:focus,
+        a:focus {
+            outline: 2px solid var(--amarillo-fuerte);
+            outline-offset: 2px;
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--rosa-pastel);
+            color: var(--primary-dark);
+        }
+
+        /* Animaciones */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .cart-count {
+            animation: pulse 2s infinite;
+        }
+
+        /* Loading animation para checkout */
+        .checkout-btn.loading {
+            position: relative;
+            color: transparent;
+        }
+
+        .checkout-btn.loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+            border: 2px solid var(--neutral-white);
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <a href="#" class="logo fredoka">Ñam Ñam Factory</a>
+            
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <button class="cart-btn" onclick="openCart()">
+                Carrito
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-nav-links">
+                <li><a href="#inicio" onclick="toggleMobileMenu()">Inicio</a></li>
+                <li><a href="#productos" onclick="toggleMobileMenu()">Productos</a></li>
+                <li><a href="#nosotros" onclick="toggleMobileMenu()">Nosotros</a></li>
+                <li><a href="#contacto" onclick="toggleMobileMenu()">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1 class="serif">Panadería Artesanal de Tradición <br> Ñam Ñam Factory</h1>
+            <p class="subtitle">
+                Elaboramos productos de masa madre con técnicas unicas, 
+                ingredientes premium y la dedicación que solo la experiencia puede brindar.
+            </p>
+            <div class="cta-buttons">
+                <a href="#productos" class="cta-btn">Explorar Productos</a>
+                <a href="#nosotros" class="cta-btn secondary">Nuestra Historia</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number fredoka">100%</span>
+                <span class="stat-label">CALIDAD GARANTIZADA</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number fredoka">TOP 1</span>
+                <span class="stat-label">EN CALIDAD DE PRODUCTOS</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number fredoka">24h</span>
+                <span class="stat-label">FERMENTACIÓN LENTA</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number fredoka">100%</span>
+                <span class="stat-label">INGREDIENTES NATURALES</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="productos">
+        <div class="products-container">
+            <div class="section-header">
+                <h2 class="section-title serif">Nuestros Productos</h2>
+                <p class="section-subtitle">
+                    Cada prodcuto es elaborado con masa madre artesanal, ingredientes de primera calidad 
+                    y el tiempo necesario para lograr la perfección en sabor y textura.
+                </p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-badge fredoka">DULCES</div>
+                        <img src="cup1.png" alt="LOGO" style="width: 300px; height: auto; border-radius: 30px;">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title serif">CUPCAKES</h3>
+                        <p class="product-description">
+                           Disfruta de nuestros irresistibles cupcakes, elaborados con ingredientes frescos y un toque casero que los hace únicos. Esponjosos, delicadamente decorados y con sabores que conquistan desde el primer bocado. ¡El detalle perfecto para cualquier ocasión!
+                        </p>
+                        <ul class="product-features">
+                            <li>Masa madre artesanal </li>
+                            <li>Con Azucar y Leche de Calidad</li>
+                            <li>Harina premium</li>
+                            <li>Sin conservantes ni aditivos</li>
+                            <li>Queso Crema Fresco y de Alta Calidad</li>
+                            <li>Duración óptima: 5-6 días</li>
+                        </ul>
+                        <div class="product-footer">
+                            <div class="product-price fredoka">Q8.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Cupcake', 8.00)">Añadir al carrito</button>
+                                
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-badge fredoka">CREMOSOS</div>
+                        <img src="rol2.png" alt="LOGO" style="width: 240px; height: auto; border-radius: 30px;">
+                    </div>
+                    <div class="product-info"> 
+                        <h3 class="product-title serif">CINNAMON ROLLS</h3>
+                        <p class="product-description">
+                           Deléitate con nuestros suaves y esponjosos cinnamon rolls, llenos de canela y cubiertos con un glaseado cremoso que se derrite en tu paladar. Cada rollo es una experiencia cálida y dulce que te hará volver por más.
+                        </p>
+                        <ul class="product-features">
+                            <li>Harina Premium</li>
+                            <li>Sabores Dulces</li>
+                            <li>Masa Suave y Esponjosa</li>
+                            <li>Se pueden disfrutar calientes o a temperatura ambiente</li>
+                            <li>Perfectos para meriendas y postres</li>
+                            <li>Duración óptima: 5-6 días</li>
+                        </ul>
+                        <div class="product-footer">
+                            <div class="product-price fredoka">Q12.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Rol de Canela', 12.00)">Añadir al carrito</button>
+                                
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="nosotros">
+        <div class="about-container">
+            <div class="about-content">
+                <h2 class="serif">Tradición y Excelencia Artesanal</h2>
+                <p>
+                    Desde nuestros inicios , Ñam Ñam Factory ha sido más que una panadería: 
+                    Pensamos que la mejor forma de conectar es atravez de nuestros paladares, por es mismo Ñam Ñam Factory
+                    se encarga de que cada bocado sea unico y una experiencia gratificante para nuestros comensales.
+                </p>
+                <p>
+                    Nuestra masa madre, cultivada y nutrida, es el corazón 
+                    de nuestra filosofía. Este cultivo vivo, cuidado con paciencia y conocimiento, 
+                    es lo que otorga a nuestros productos ese sabor único e inconfundible.
+                </p>
+                <p>
+                    Creemos en la slow food, en el tiempo como ingrediente esencial, y en que 
+                    cada producto debe ser una experiencia sensorial completa que conecte a los guatemaltecos 
+                    con la auténtica tradición panadera.
+                </p>
+
+                <div class="about-features">
+                    <div class="about-feature">
+                        <span class="about-feature-icon">🌾</span>
+                        <h3 class="serif">Ingredientes Premium</h3>
+                        <p>Seleccionamos cuidadosamente cada ingrediente, priorizando la calidad orgánica y local</p>
+                    </div>
+                    <div class="about-feature">
+                        <span class="about-feature-icon">⏳</span>
+                        <h3 class="serif">Tiempo y Paciencia</h3>
+                        <p>Nuestros procesos respetan los tiempos naturales, sin prisa ni atajos</p>
+                    </div>
+                    <div class="about-feature">
+                        <span class="about-feature-icon">👨‍🍳</span>
+                        <h3 class="serif">Maestros Panaderos</h3>
+                        <p>Nuestro equipo de panaderos cuenta con la experiencia para ofrecerles el mejor producto</p>
+                    </div>
+                    <div class="about-feature">
+                        <span class="about-feature-icon">🏆</span>
+                        <h3 class="serif">Excelencia Garantizada</h3>
+                        <p>Cada producto es revisado individualmente para asegurar los más altos estándares</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="logo.jpg" alt="LOGO" style="width: 500px; height: auto; border-radius: 30px;">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <h2 class="serif">Nuestra Vision, Mision y Valores</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">
+                        <h1>Visión</h1>
+                        Ser reconocidos a nivel nacional como una repostería artesanal de referencia,
+                        innovadora y con productos de alta calidad, que endulzan momentos especiales 
+                        y crean memorias inolvidables.
+                    </p>
+                    <p class="testimonial-author serif"></p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">
+                       <h1>Misión</h1>
+                       Elaborar productos de repostería con ingredientes frescos y de primera calidad,
+                       combinando tradición con creatividad, para ofrecer experiencias únicas a nuestros clientes y fomentar el amor por lo hecho a mano.
+                    </p>
+                    <p class="testimonial-author serif"></p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">
+                        <h1>Valores</h1>
+                        -Calidad: Compromiso con la excelencia en cada producto.<br>
+                        -Creatividad: Innovación constante en sabores, formas y presentaciones.<br>
+                        -Honestidad: Transparencia en los ingredientes y procesos.<br>
+                        -Pasión: Amor por la repostería y dedicación en cada detalle.<br>
+                        -Empatía: Escuchamos y valoramos a cada cliente.<br>
+                        -Sostenibilidad: Uso responsable de los recursos y empaques ecológicos.
+                    </p>
+                    <p class="testimonial-author serif"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2 class="serif">Su Selección</h2>
+                <button class="close-cart" onclick="closeCart()" aria-label="Cerrar carrito">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <div class="cart-empty">
+                    Su carrito está vacío
+                </div>
+            </div>
+            <div class="cart-total fredoka" id="cartTotal">Total: Q0.00</div>
+            
+            <div class="payment-methods">
+                <h3 class="serif">Método de Pago Preferido</h3>
+                <div class="payment-options">
+                    <div class="payment-option" onclick="selectPaymentMethod('efectivo')" data-method="efectivo">
+                        <span class="payment-option-icon">💵</span>
+                        <div class="payment-option-text">Efectivo</div>
+                    </div>
+                    <div class="payment-option" onclick="selectPaymentMethod('transferencia')" data-method="transferencia">
+                        <span class="payment-option-icon">🏦</span>
+                        <div class="payment-option-text">Transferencia</div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="checkout-btn" id="checkoutBtn" onclick="checkout()">
+                Enviar Pedido por Email
+            </button>
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="fredoka">Ñam Ñam Factory</h3>
+                    <p>
+                        Panadería artesanal de tradición familiar, especializada en productos de masa madre 
+                        y productos horneados de la más alta calidad. Llevamos sabores 
+                        auténticos a las mesas guatemaltecas.
+                    </p>
+                    <p>
+                        Nuestro compromiso es con la excelencia, la tradición y la satisfacción 
+                        completa de nuestros estimados clientes.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="serif">Información de Contacto</h3>
+                    <ul>
+                        <li>📍 Ciudad de Guatemala, Guatemala</li>
+                        <li>Zona 7, Colegio Monte Carmelo</li>
+                        <li>📷 <a href="https://www.instagram.com/namn.amfactory?igsh=NjN4dXBrZ29pMmJi">Instagram</a></li>
+                        <li>✉️ <a href="mailto:namnamfactory804@gmail.com">namnamfactory804@gmail.com</a></li>
+                    </ul>
+                </div>
+                
+              
+                
+                <div class="footer-section">
+                    <h3 class="serif">Servicios</h3>
+                    <ul>
+                        <li>Venta directa en tienda</li>
+                        <li>Entregas a clases</li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ñam Ñam Factory. Todos los derechos reservados. | Panadería Artesanal de Tradición</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toastContainer"></div>
+
+    <script>
+        // Global Variables
+        let cart = [];
+        let cartTotal = 0;
+        let mobileMenuOpen = false;
+        let selectedPaymentMethod = 'efectivo'; // Default payment method
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', function() {
+            initScrollEffects();
+            initSmoothScrolling();
+            updateCartDisplay();
+            selectPaymentMethod('efectivo'); // Set default payment method
+        });
+
+        // Scroll Effects
+        function initScrollEffects() {
+            const header = document.getElementById('header');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Smooth Scrolling
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Mobile Menu Functions
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const body = document.body;
+            
+            mobileMenuOpen = !mobileMenuOpen;
+            
+            if (mobileMenuOpen) {
+                mobileMenu.classList.add('active');
+                body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.remove('active');
+                body.style.overflow = 'auto';
+            }
+        }
+
+        // Cart Functions
+        function addToCart(productName, price) {
+            const existingItem = cart.find(item => item.name === productName);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: productName,
+                    price: price,
+                    quantity: 1,
+                    id: Date.now()
+                });
+            }
+            
+            updateCartDisplay();
+            showToast(`${productName} agregado al carrito`, 'success');
+        }
+
+        function removeFromCart(itemId) {
+            const item = cart.find(item => item.id === itemId);
+            if (item) {
+                cart = cart.filter(item => item.id !== itemId);
+                updateCartDisplay();
+                showToast(`Producto eliminado del carrito`, 'success');
+            }
+        }
+
+        function updateQuantity(itemId, change) {
+            const item = cart.find(item => item.id === itemId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(itemId);
+                } else {
+                    updateCartDisplay();
+                }
+            }
+        }
+
+        function updateCartDisplay() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartTotalElement = document.getElementById('cartTotal');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            // Update cart count
+            if (totalItems > 0) {
+                cartCount.style.display = 'flex';
+                cartCount.textContent = totalItems;
+            } else {
+                cartCount.style.display = 'none';
+            }
+            
+            // Update cart items
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<div class="cart-empty">Su carrito está vacío</div>';
+                checkoutBtn.disabled = true;
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-details">
+                                Q${item.price.toFixed(2)} por unidad
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)" title="Disminuir cantidad">−</button>
+                                <span class="quantity-display">${item.quantity}</span>
+                                <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)" title="Aumentar cantidad">+</button>
+                            </div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="cart-item-price">Q${(item.price * item.quantity).toFixed(2)}</div>
+                            <button class="remove-item" onclick="removeFromCart(${item.id})" title="Eliminar producto">
+                                Eliminar
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+                checkoutBtn.disabled = false;
+            }
+            
+            cartTotalElement.textContent = `Total: Q${cartTotal.toFixed(2)}`;
+        }
+
+        function openCart() {
+            const cartModal = document.getElementById('cartModal');
+            cartModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCart() {
+            const cartModal = document.getElementById('cartModal');
+            cartModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Payment Method Selection
+        function selectPaymentMethod(method) {
+            selectedPaymentMethod = method;
+            
+            // Update UI
+            document.querySelectorAll('.payment-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            document.querySelector(`[data-method="${method}"]`).classList.add('selected');
+        }
+
+        // Enhanced Checkout Function with Formspree Integration
+        async function checkout() {
+            if (cart.length === 0) {
+                showToast('Su carrito está vacío', 'error');
+                return;
+            }
+
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            checkoutBtn.classList.add('loading');
+            checkoutBtn.disabled = true;
+
+            try {
+                // Prepare email data
+                const orderData = {
+                    items: cart.map(item => ({
+                        name: item.name,
+                        price: item.price,
+                        quantity: item.quantity,
+                        subtotal: item.price * item.quantity
+                    })),
+                    total: cartTotal,
+                    paymentMethod: selectedPaymentMethod,
+                    timestamp: new Date().toLocaleString('es-GT', {
+                        timeZone: 'America/Guatemala',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    })
+                };
+
+                // Send to Formspree
+                const formspreeResponse = await fetch('"https://formspree.io/f/mzzvkqvg"', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        subject: `Nuevo Pedido - Ñam Ñam Factory - Q${cartTotal.toFixed(2)}`,
+                        message: generateEmailMessage(orderData),
+                        _replyto: 'juligam463@gmail.com',
+                        _cc: 'juligam463@gmail.com'
+                    })
+                });
+
+                if (formspreeResponse.ok) {
+                    // Also send WhatsApp message
+                    const whatsappMessage = generateWhatsAppMessage(orderData);
+                    
+                    
+                    // Clear cart
+                    cart = [];
+                    updateCartDisplay();
+                    closeCart();
+                    
+                    showToast('✅ Pedido enviado exitosamente por Email', 'success');
+                    
+                    // Open WhatsApp
+                    window.open(whatsappUrl, '_blank');
+                    
+                } else {
+                    throw new Error('Error al enviar el pedido por email');
+                }
+
+            } catch (error) {
+                console.error('Error en checkout:', error);
+                
+                // Fallback to WhatsApp only
+                const orderData = {
+                    items: cart.map(item => ({
+                        name: item.name,
+                        price: item.price,
+                        quantity: item.quantity,
+                        subtotal: item.price * item.quantity
+                    })),
+                    total: cartTotal,
+                    paymentMethod: selectedPaymentMethod,
+                    timestamp: new Date().toLocaleString('es-GT', {
+                        timeZone: 'America/Guatemala'
+                    })
+                };
+                
+                const whatsappMessage = generateWhatsAppMessage(orderData);
+                
+                
+                // Clear cart
+                cart = [];
+                updateCartDisplay();
+                closeCart();
+                
+                showToast('📩 Pedido preparado para Email', 'success');
+                window.open(whatsappUrl, '_blank');
+                
+            } finally {
+                checkoutBtn.classList.remove('loading');
+                checkoutBtn.disabled = false;
+            }
+        }
+
+        function generateEmailMessage(orderData) {
+            let message = `NUEVO PEDIDO - ÑAM ÑAM FACTORY\n`;
+            message += `================================\n\n`;
+            message += `Fecha y Hora: ${orderData.timestamp}\n\n`;
+            message += `DETALLES DEL PEDIDO:\n`;
+            message += `-------------------\n`;
+            
+            orderData.items.forEach((item, index) => {
+                message += `${index + 1}. ${item.name}\n`;
+                message += `   • Cantidad: ${item.quantity} ${item.quantity === 1 ? 'unidad' : 'unidades'}\n`;
+                message += `   • Precio unitario: Q${item.price.toFixed(2)}\n`;
+                message += `   • Subtotal: Q${item.subtotal.toFixed(2)}\n\n`;
+            });
+            
+            message += `RESUMEN:\n`;
+            message += `--------\n`;
+            message += `Total de productos: ${orderData.items.reduce((sum, item) => sum + item.quantity, 0)} unidades\n`;
+            message += `TOTAL A PAGAR: Q${orderData.total.toFixed(2)}\n`;
+            message += `Método de pago preferido: ${orderData.paymentMethod === 'efectivo' ? 'Efectivo' : 'Transferencia bancaria'}\n\n`;
+            message += `PRÓXIMOS PASOS:\n`;
+            message += `--------------\n`;
+            message += `1. Confirmar disponibilidad de productos\n`;
+            message += `2. Coordinar horario de entrega/retiro\n`;
+            message += `3. Confirmar dirección de entrega (si aplica)\n`;
+            message += `4. Procesar el pago\n\n`;
+            message += `Gracias por elegir Ñam Ñam Factory!\n`;
+            message += `Panadería Artesanal de Tradición desde 2009`;
+            
+            return message;
+        }
+
+        function generateWhatsAppMessage(orderData) {
+            let message = `🍞 *PEDIDO - ÑAM ÑAM FACTORY* 🍞\n\n`;
+            message += `Hola! Me interesa realizar el siguiente pedido:\n\n`;
+            message += `📋 *DETALLES:*\n`;
+            
+            orderData.items.forEach((item, index) => {
+                message += `${index + 1}. *${item.name}*\n`;
+                message += `   └ Cantidad: ${item.quantity} ${item.quantity === 1 ? 'unidad' : 'unidades'}\n`;
+                message += `   └ Precio: Q${item.price.toFixed(2)} c/u\n`;
+                message += `   └ Subtotal: Q${item.subtotal.toFixed(2)}\n\n`;
+            });
+            
+            message += `💰 *TOTAL: Q${orderData.total.toFixed(2)}*\n`;
+            message += `💳 Método de pago: *${orderData.paymentMethod === 'efectivo' ? 'Efectivo' : 'Transferencia'}*\n\n`;
+            message += `Por favor, confirmen:\n`;
+            message += `✅ Disponibilidad de productos\n`;
+            message += `⏰ Horario de entrega/retiro\n`;
+            message += `📍 Detalles de entrega\n\n`;
+            message += `¡Gracias! 🙏`;
+            
+            return message;
+        }
+
+        // Toast Notifications
+        function showToast(message, type = 'success') {
+            const toastContainer = document.getElementById('toastContainer');
+            
+            // Remove existing toasts
+            const existingToasts = toastContainer.querySelectorAll('.toast');
+            existingToasts.forEach(toast => toast.remove());
+            
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            
+            const icon = type === 'success' ? '✅' : '❌';
+            toast.innerHTML = `<span class="toast-icon">${icon}</span>${message}`;
+            
+            toastContainer.appendChild(toast);
+            
+            // Show toast
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+            
+            // Hide toast after 4 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        toast.remove();
+                    }
+                }, 400);
+            }, 4000);
+        }
+
+        // Close cart when clicking outside
+        document.addEventListener('click', function(event) {
+            const cartModal = document.getElementById('cartModal');
+            const cartContent = cartModal.querySelector('.cart-content');
+            
+            if (cartModal.classList.contains('active') && 
+                !cartContent.contains(event.target) && 
+                !event.target.closest('.cart-btn')) {
+                closeCart();
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (mobileMenuOpen && 
+                !mobileMenu.contains(event.target) && 
+                !mobileMenuToggle.contains(event.target)) {
+                toggleMobileMenu();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                if (document.getElementById('cartModal').classList.contains('active')) {
+                    closeCart();
+                }
+                if (mobileMenuOpen) {
+                    toggleMobileMenu();
+                }
+            }
+        });
+
+        // Prevent form submission on Enter in cart
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' && event.target.closest('.cart-content')) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
